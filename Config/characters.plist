@@ -1,0 +1,10 @@
+{
+	"himsn_pilot" = 
+	{
+		"bounty" = "0";
+		"insurance" = "2500";
+		"legal_status" = "0";
+		"random_seed" = "0 0 0 0 0 0";
+		"short_description" = "A pilot in Her Imperial Majesty's Space Navy.";
+	}
+}

@@ -1,0 +1,10 @@
+// Information sent to fragment shader.
+varying vec3			v_normal;		// Surface normal
+
+void main()
+{
+    v_normal = normalize(gl_NormalMatrix * gl_Normal);
+   
+    gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
+    gl_Position = ftransform();
+}

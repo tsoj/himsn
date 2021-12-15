@@ -1,0 +1,26 @@
+// Information from Oolite.
+uniform sampler2D	uColorMap;
+uniform float		hull_heat_level;	
+
+// Information from vertex shader.
+varying vec3        v_normal;
+
+#define LIGHT(idx) { vec3 lightVector = normalize(gl_LightSource[idx].position.xyz); color += gl_FrontMaterial.diffuse * gl_LightSource[idx].diffuse * max(dot(v_normal, lightVector), 0.0); }
+
+void main(void)
+{
+    // Calculate illumination.
+    vec4 color = gl_FrontMaterial.ambient * gl_LightSource[0].ambient;
+    LIGHT(1);
+    
+    // Load texture data
+    vec2 texCoord = gl_TexCoord[0].st;
+    vec4 colorMap = texture2D(uColorMap, texCoord);
+	
+	// Add the all over hull temperature glow.
+   float hullHeat = max(hull_heat_level - 0.5, 0.0) * 2.0;  
+   colorMap.r += hullHeat;
+   color *= colorMap; 
+	
+    gl_FragColor = vec4(color.rgb, 1.0);
+}

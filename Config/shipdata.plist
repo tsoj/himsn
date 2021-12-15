@@ -1,0 +1,1190 @@
+{
+	"himsn_misjumper" = 
+	{
+		"fuel" = "70";
+		"hyperspace_motor" = "yes";
+		"like_ship" = "alloy";
+		"roles" = "himsn_misjumper";
+	};
+	
+	"himsn_komodo_carrier" =
+	{
+		aft_eject_position = "NONE";
+		aft_weapon_type = "NONE";
+		ai_type = "himsn_carrier_ai.js";
+		"allegiance" = "restricted";
+		allows_auto_docking = "no";
+		allows_fast_docking = "no";
+		"auto_ai" = "no";
+		"beacon" = "N";
+		"beacon_label" = "Imperial Navy Carrier";
+		cargo_type = "CARGO_NOT_CARGO";
+		"defense_ship_role" = "himsn_escort";
+		energy_recharge_rate = 50.0;
+		"equipment_price_factor" = "2.5";
+		"equivalent_tech_level" = 13;
+		exhaust =
+		(
+				"143 -26.0 -470.0 10.0 10.0 100.0", 
+				"-143 -26.0 -470.0 10.0 10.0 100.0"
+		);
+		forward_weapon_type = "NONE";
+		"frangible" = no;
+		fuel = 70;
+		has_ecm = yes;
+		has_escape_pod = no;
+		has_scoop = yes;
+		interstellar_undocking = "yes";
+		is_carrier = yes;
+		likely_cargo = 0;
+		market = "none";
+		materials =         
+		{
+			"komodo_texture.png" =             
+			{
+				"emission_map" = "komodo_em-map.png";
+				"normal_map" = "komodo_normal.png";
+				"specular_map" = 
+				{
+					name = "komodo_texture.png"; extract_channel = "a";
+				};
+				shininess = 25;
+				"specular_color" = 
+				(
+					"0.3",
+					"0.3",
+					"0.6",
+					"0.5"
+				);
+			};
+		};
+		max_cargo = 0;
+		"max_defense_ships" = "20";
+		max_energy = 5000;
+		max_flight_pitch = 0.1;
+		max_flight_roll = 0.3;
+		max_flight_speed = 100;
+		"max_missiles" = "32";
+		missile_launch_position = "-125.0 -60.0 250.0";
+		missiles = 32; 
+		"missile_load_time" = "1.5"; 
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		model = "komodo.dat";
+		name = "Imperial Navy Carrier (Komodo Class)";
+		"requires_docking_clearance" = "yes";
+		roles = "himsn_komodo_carrier";
+		"scan_class" = CLASS_MILITARY;
+		"script" = "himsn_carrier.js";
+		script_info = 
+		{
+			bgs_tunnel_texture = "komodo-tunnel.png";
+		};
+		subentities =
+		(
+			"himsn_komodo_dock -4.4 -28.7 -435.4 0 0 1 0",
+			{
+				type = flasher;
+				size = 10;
+				color = greenColor;
+				frequency = 1;
+				phase = 0.0;
+				position = ( 92.0, -63.0, -435.0);
+				"bright_fraction" = 0.2;
+			},
+			{
+				type = flasher;
+				size = 10;
+				color = greenColor;
+				frequency = 1;
+				phase = 0.0;
+				position = ( -102.0, -63.0, -435.0);
+				"bright_fraction" = 0.2;
+			},
+			{
+				type = flasher;
+				size = 10;
+				color = greenColor;
+				frequency = 1;
+				phase = 0.0;
+				position = ( 92.0, 3.0, -435.0);
+                "bright_fraction" = 0.2;
+			},
+			{
+				type = flasher;
+				size = 10;
+				color = greenColor;
+				frequency = 1;
+				phase = 0.0;
+				position = ( -102.0, 3.0, -435.0);
+				"bright_fraction" = 0.2;
+			}
+		);
+		thrust = 15;
+		weapon_position_aft = "0.0 8.625 -54.125";
+		weapon_position_forward = "0.0 8.0 57.5";
+		weapon_position_port = "-16.25 1.75 0.0";
+		weapon_position_starboard = "16.25 1.75 0.0";
+	};
+	
+	"himsn_komodo_dock" =
+	{
+		ai_type = "nullAI.plist";
+		materials = 
+		{ 
+			"komodo-dock-back.png" = 
+			{ 
+				emission_map = "komodo-dock-back_em-map.png";
+				normal_map = "komodo-dock-back_normal-map.png";
+			};
+			"komodo-dock-sides.png" = 
+			{ 
+				emission_map = "komodo-dock-sides_em-map.png";
+				normal_map = "komodo-dock-sides_normal-map.png";
+			};
+			"komodo-dock-TB.png" = 
+			{ 
+				normal_map = "komodo-dock-TB_normal-map.png";
+			};
+		};
+		model = "komodo-dock-flat.dat";
+		name = "Docking Slit (horizontal)";
+		roles = "himsn_komodo_dock";
+		"script" = "himsn_carrier_dock.js";
+	};
+	
+	"himsn_asp" = 
+	{
+		"auto_ai" = "no";
+		"bounty" = "0";
+		"forward_weapon_type" = "WEAPON_MILITARY_LASER";
+		"fuel" = "70";
+		"has_ecm" = "yes";
+		"has_escape_pod" = "yes";
+		"has_fuel_injection" = "yes";
+		"has_shield_booster" = "yes";
+		"has_shield_enhancer" = "yes";
+		"has_scoop" = "yes";
+		"heat_insulation" = "2.0";
+		"laser_color" = "blueColor";
+		"like_ship" = "oolite_template_asp";
+		"likely_cargo" = "0";
+		"materials" =
+		{
+			"Hull" =
+			{
+				"diffuse_map" = "himsn_asp_diffuse.png"; 
+				"normal_map" = "himsn_asp_normal.png";
+				"specular_map" = 
+				{ 
+					"name" = "himsn_asp_diffuse.png"; 
+					"extract_channel" = "a"; 
+				};
+				"emission_map" = 
+				{ 
+					"name" = "himsn_asp_effects.png"; 
+					"extract_channel" = "g"; 
+				};
+				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
+				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
+				"shininess" = "5";      
+			};
+			"Gun" = 
+			{ 
+				"diffuse_map" = "oolite_asp_subents.png"; 
+				"specular_color" = ( 0.2, 0.2, 0.2 ); 
+				"shininess" = "5"; 
+			};   
+		};
+		"missiles" = "4";
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		"name" = "Imperial Navy Asp Mark II";
+		"pilot" = "himsn_pilot"; 	
+		"roles" = "himsn_asp";
+		"scan_class" = "CLASS_MILITARY";
+		"starboard_weapon_type" = "WEAPON_MILITARY_LASER";
+	};
+	
+	"himsn_sidewinder" = 
+	{
+		"auto_ai" = "no";
+		"bounty" = "0";
+		"forward_weapon_type" = "WEAPON_MILITARY_LASER";
+		"fuel" = "70";
+		"has_ecm" = "yes";
+		"has_escape_pod" = "yes";
+		"has_fuel_injection" = "yes";
+		"has_shield_booster" = "yes";
+		"has_shield_enhancer" = "yes";
+		"has_scoop" = "yes";
+		"heat_insulation" = "2.0";
+		"laser_color" = "blueColor";
+		"like_ship" = "oolite_template_sidewinder-escort";
+		"likely_cargo" = "0";
+		"materials" =
+		{
+			"Hull" = 
+			{
+				"diffuse_map" = "himsn_sidewinder_diffuse.png"; 
+				"normal_map" = "himsn_sidewinder_normal.png";
+				"specular_map" = 
+				{ 
+					"name" = "himsn_sidewinder_diffuse.png"; 
+					"extract_channel" = "a"; 
+				};
+				"emission_map" = 
+				{ 
+					"name" = "himsn_sidewinder_normal.png"; 
+					"extract_channel" = "a"; 
+				};
+				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
+				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
+				"shininess" = "5";      
+			};
+		};
+		"missiles" = "2";
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		"name" = "Imperial Navy Sidewinder";
+		"pilot" = "himsn_pilot";
+		"roles" = "himsn_sidewinder";
+		"scan_class" = "CLASS_MILITARY";
+		"starboard_weapon_type" = "WEAPON_MILITARY_LASER";
+	};
+	
+	"himsn_anaconda" = 
+	{
+		"auto_ai" = "no";
+		"bounty" = "0";
+		"forward_weapon_type" = "WEAPON_MILITARY_LASER";
+		"fuel" = "70";
+		"has_ecm" = "yes";
+		"has_escape_pod" = "yes";
+		"has_fuel_injection" = "yes";
+		"has_shield_booster" = "yes";
+		"has_shield_enhancer" = "yes";
+		"has_scoop" = "yes";
+		"heat_insulation" = "2.0";
+		"laser_color" = "blueColor";
+		"like_ship" = "oolite_template_anaconda";
+		"likely_cargo" = "0";
+		"materials" =
+		{
+			"Hull" =
+			{
+				"diffuse_map" = "himsn_ana_diffuse.png"; 
+				"normal_map" = "himsn_ana_normal.png";
+				"specular_map" = 
+				{ 
+					"name" = "himsn_ana_diffuse.png"; 
+					"extract_channel" = "a"; 
+				};
+				"emission_map" = 
+				{ 
+					"name" = "himsn_ana_normal.png"; 
+					"extract_channel" = "a"; 
+				};
+				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
+				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
+				"shininess" = "5";      
+			};
+			"Engine" = 
+			{ 
+				"diffuse_map" = "oolite_anaconda_subents.png"; 
+				"specular_color" = ( 0.2, 0.2, 0.2 ); 
+				"shininess" = "5"; 
+				"emission_map" = 
+				{
+					"name" = "oolite_anaconda_subents.png"; 
+					"extract_channel" = "a";
+				};
+				"emission_modulate_color" = ( 0.7325, 0.9686, 0.9926, 1.0 );            
+			};
+			"Gun" = 
+			{ 
+				"diffuse_map" = "oolite_anaconda_subents.png"; 
+				"specular_color" = ( 0.2, 0.2, 0.2 ); 
+				"shininess" = "5"; 
+			};      
+		};
+		"missiles" = "8";
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		"name" = "Imperial Navy Anaconda";
+		"pilot" = "himsn_pilot";
+		"roles" = "himsn_anaconda";
+		"scan_class" = "CLASS_MILITARY";
+		"starboard_weapon_type" = "WEAPON_MILITARY_LASER";
+	};
+	
+	"himsn_boa_mk2" = 
+	{
+		"auto_ai" = "no";
+		"bounty" = "0";
+		"forward_weapon_type" = "WEAPON_MILITARY_LASER";
+		"fuel" = "70";
+		"has_ecm" = "yes";
+		"has_escape_pod" = "yes";
+		"has_fuel_injection" = "yes";
+		"has_shield_booster" = "yes";
+		"has_shield_enhancer" = "yes";
+		"has_scoop" = "yes";
+		"heat_insulation" = "2.0";
+		"laser_color" = "blueColor";
+		"like_ship" = "oolite_template_boa-mk2";
+		"likely_cargo" = "0";
+		materials =
+		{
+			"Hull" = 
+			{
+				diffuse_map = "himsn_boa2_diffuse.png"; 
+				normal_map = "himsn_boa2_normal.png";
+				specular_map = { name = "himsn_boa2_diffuse.png"; extract_channel = "a"; };
+				emission_map = { name = "himsn_boa2_normal.png"; extract_channel = "a"; };
+				emission_modulate_color = ( 0.98, 0.92, 0.72 );
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;      
+			};
+			"Engine" = 
+			{ 
+				diffuse_map = "oolite_boa-mk2_subents.png"; 
+				specular_color = ( 0.2, 0.2, 0.2 );
+				shininess = 5;
+				emission_map = 
+				{
+					name = "oolite_boa-mk2_subents.png"; extract_channel = "a";
+				};
+				emission_modulate_color = (0.7325, 0.9686, 0.9926, 1.0);            
+			};             
+		};
+		"missiles" = "32";
+		"missile_load_time" = "2.0";
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		"name" = "Imperial Navy Boa Class Cruiser";
+		"pilot" = "himsn_pilot";
+		"roles" = "himsn_boa_mk2";
+		"scan_class" = "CLASS_MILITARY";
+		"starboard_weapon_type" = "WEAPON_MILITARY_LASER";
+	};
+	
+	"himsn_constrictor" = 
+	{
+		"auto_ai" = "no";
+		"bounty" = "0";
+		"forward_weapon_type" = "WEAPON_MILITARY_LASER";
+		"fuel" = "70";
+		"has_ecm" = "yes";
+		"has_escape_pod" = "yes";
+		"has_fuel_injection" = "yes";
+		"has_shield_booster" = "yes";
+		"has_shield_enhancer" = "yes";
+		"has_scoop" = "yes";
+		"heat_insulation" = "2.0";
+		"laser_color" = "blueColor";
+		"like_ship" = "constrictor";
+		"likely_cargo" = "0";
+		"missiles" = "4";
+		"missile_role" = "EQ_HARDENED_MISSILE";
+		"name" = "Imperial Navy Constrictor";
+		"pilot" = "himsn_pilot";
+		"roles" = "himsn_constrictor";
+		"scan_class" = "CLASS_MILITARY";
+		"starboard_weapon_type" = "WEAPON_MILITARY_LASER";
+	};
+	
+	"himsn_headquarters" = 
+	{
+		ai_type = "himsn_station_ai.js";
+		"allegiance" = "restricted";
+		allows_auto_docking = "no";
+		allows_fast_docking = "no";
+		"auto_ai" = "no";
+		"beacon" = "N";
+		"beacon_label" = "Imperial Navy Headquarters";
+		cargo_type = "CARGO_NOT_CARGO";
+ 		defense_ship_role = "himsn_escort";
+		energy_recharge_rate = 100;
+		"equipment_price_factor" = "2.5";
+		"equivalent_tech_level" = "13";
+		forward_weapon_type = "WEAPON_NONE";
+		frangible = no;
+		has_ecm = yes;
+		has_escape_pod = no;
+		has_scoop = no;
+		has_npc_traffic = no;
+		has_patrol_ships = no;
+		has_shipyard = no;
+		hyperspace_motor = no;
+		interstellar_undocking = yes;
+		is_carrier = yes;
+		materials = { 
+			"himsn_kiotaHubInner.png" = { 
+				diffuse_map = "himsn_kiotaHubInner.png"; 
+				emission_map = "himsn_kiotaHubGlow.png"; 
+				shininess = 5;
+				}; 
+			"himsn_kiotaHubOuter.png" = {
+				diffuse_map = "himsn_kiotaHubOuter.png";
+				normal_map = "himsn_kiotaHubOuternormal.png";
+				specular_map = { name = "himsn_kiotaHubOuter.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;					
+				};
+		};
+		"market" = "none";
+		"max_defense_ships" = "10";
+		"max_police " = "0";
+		"max_scavengers" = "0";
+		max_energy = 25000;
+		max_flight_pitch = 8;
+		max_flight_roll = 8;
+		max_flight_speed = 0;
+		max_police = 4;
+		max_scavengers = 4;
+		missiles = 32;
+		missile_launch_position = "0.0 150.67 715.91.0";
+		missile_load_time = 10;
+		missile_role = "EQ_HARDENED_MISSILE";
+		model = "himsn_kiotaHub.dat";
+		name = "Imperial Navy Headquarters";
+		requires_docking_clearance = yes;
+		roles = "himsn_headquarters himsn_station station";
+		rotating = yes;
+		scan_class = "CLASS_STATION";
+		script = "himsn_station.js";
+		script_info = {"stationOrientation" = "planet"; };
+		shaders = { 
+			"himsn_kiotaHubInner.png" = { 
+				textures = 
+					(
+					"himsn_kiotaHubInner.png", 
+					{ name = "himsn_kiotaHubGlow.png"; repeat_t = "yes"; }
+					);
+				vertex_shader = "himsn_kiotaHub.vertex"; 
+				fragment_shader = "himsn_kiotaHub.fragment"; 
+				uniforms =
+						{
+						uColorMap = { type = texture; value = 0; };
+						uEmissionMap = { type = texture; value = 1; };
+						uTime = "timeElapsedSinceSpawn";
+						};
+			shininess = 5;
+			};
+		};	
+		smooth = yes;
+		subentities = (
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 1, 0, 0, 0);	
+			position = ( 0, 0, 650 );
+			is_dock = true;
+			},
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 0, 0, 1, 0);	
+			position = ( 0, 0, -650 );
+			is_dock = true;
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, 2125, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, 2125, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 2125, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 2125, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, -2125, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, -2125, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( -2125, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( -2125, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaSRing";
+			type = "standard";
+			position = ( 0, 0, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( 0, 3375, 0 );
+			},	
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( 3375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( 0, -3375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},	
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( -3375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( -150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( 150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( -150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( 150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			}
+		);
+		station_roll = -0.06;
+		thrust = 100;
+		tunnel_corners = 8;
+		tunnel_aspect_ratio = 1;	
+	};	
+	
+	"himsn_kiotaStrut" = {
+		ai_type = "nullAI.plist";
+		model = "himsn_kiotaStrut.dat";
+		"materials" = {
+			"himsn_kiotaStrut.png" =
+				{
+				diffuse_map = "himsn_kiotaStrut.png";
+				normal_map = "himsn_kiotaStrutnormal.png";
+				specular_map = { name = "himsn_kiotaStrut.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;					
+				};
+		};
+		name = "Kiota Strut";
+		roles = "himsn_kiotaStrut";
+		smooth = yes;
+	};
+
+	"himsn_kiotaLift" = {
+		ai_type = "nullAI.plist";
+		materials = { 
+			"himsn_kiotaLift.png" = { 
+				diffuse_map = "himsn_kiotaLift.png"; 
+				emission_map = "himsn_kiotaLiftGlow.png"; 
+				}; 
+			}; 
+		model = "himsn_kiotaLift.dat";
+		name = "Kiota Lift";
+		roles = "himsn_kiotaLift";
+		smooth = yes;
+	};
+		
+	"himsn_kiotaSRing" = {
+		ai_type = "nullAI.plist";
+		model = "himsn_kiotaSRing.dat";
+		"materials" = {
+			"himsn_kiotaSRing.png" =
+				{
+				diffuse_map = "himsn_kiotaSRing.png";
+				normal_map = "himsn_kiotaSRingnormal.png";
+				specular_map = { name = "himsn_kiotaSRing.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;					
+				};
+		};
+		name = "Kiota Small Ring";
+		roles = "himsn_kiotaSRing";
+		smooth = yes;
+	};
+	
+	"himsn_kiotaSpur" = {
+		ai_type = "nullAI.plist";
+		model = "himsn_kiotaSpur.dat";
+		"materials" = {
+			"himsn_kiotaSpur.png" =
+				{
+				diffuse_map = "himsn_kiotaSpur.png";
+				normal_map = "himsn_kiotaSpurnormal.png";
+				specular_map = { name = "himsn_kiotaSpur.png"; extract_channel = "a"; };
+				emission_map = { name = "himsn_kiotaSpurnormal.png"; extract_channel = "a"; };
+				emission_modulate_color = ( 0.40, 0.60, 0.80 );
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;					
+				};
+		};
+		name = "Kiota Spur";
+		roles = "himsn_kiotaSpur";
+		smooth = yes;
+	};
+	
+	"himsn_kiotaDisc" = {
+		ai_type = "nullAI.plist";
+		materials = { 
+			"himsn_kiotaDisc.png" = { 
+				diffuse_map = "himsn_kiotaDisc.png"; 
+				emission_map = "himsn_kiotaDiscGlow.png"; 
+				normal_map = "himsn_kiotaDiscnormal.png";
+				specular_map = { name = "himsn_kiotaDisc.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;
+				}; 
+			};
+		model = "himsn_kiotaDisc.dat";
+		name = "Kiota Disc";
+		roles = "himsn_kiotaDisc";
+		smooth = yes;
+	};
+	
+	"himsn_kiotaComms" = {
+		ai_type = "nullAI.plist";
+		model = "himsn_kiotaComms.dat";
+		"materials" = {
+			"himsn_kiotaComms.png" =
+				{
+				diffuse_map = "himsn_kiotaComms.png";
+				normal_map = "himsn_kiotaCommsnormal.png";
+				specular_map = { name = "himsn_kiotaComms.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				shininess = 5;					
+				};
+		};
+		name = "Kiota Comms Array";
+		roles = "himsn_kiotaComms";
+		smooth = yes;
+	};
+	
+	"himsn_kiotaTurret" = {
+		ai_type = "nullAI.plist";
+		laser_color = "blueColor";
+		model = "himsn_kiotaTurret.dat";
+		smooth = yes;
+		name = "Kiota Turret";
+		roles = "himsn_kiotaTurret ballturret";
+		max_flight_pitch = 1;
+		max_flight_yaw = 1;
+		max_flight_roll = 1;
+		max_energy = 2000;
+		shaders = { 
+            "himsn_kiotaTurret.png" = 
+				{ 
+                vertex_shader = "himsn_kiotaTurret.vertex"; 
+                fragment_shader = "himsn_kiotaTurret.fragment"; 
+                textures = ( "himsn_kiotaTurret.png" );
+				uniforms =
+						{
+						uColorMap = { type = texture; value = 0; };
+						hull_heat_level = "hullHeatLevel";
+						}; 	
+				}; 
+			};	
+		thrust = 1;
+		energy_recharge_rate = 5;
+	};
+	
+	"himsn_kiotaDock" =
+	{
+		ai_type = "nullAI.plist";
+		model = "himsn_kiotaDock.dat";
+		name = "Kiota Dock Ring (Hidden)";
+		roles = "docking-ring-kiota";
+		"script" = "himsn_station_dock.js";
+	};
+	
+	"himsn_system_base" = 
+	{
+		like_ship = "himsn_headquarters";
+		beacon_label = "Imperial Navy Base";
+		name = "Imperial Navy Base";
+		roles = "himsn_system_base himsn_station station";
+		subentities = (
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 1, 0, 0, 0);	
+			position = ( 0, 0, 650 );
+			is_dock = true;
+			},
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 0, 0, 1, 0);	
+			position = ( 0, 0, -650 );
+			is_dock = true;
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaSpur";
+			type = "standard";
+			position = ( 0, 1625, 0 );
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( 1625, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaSpur";
+			type = "standard";
+			position = ( 0, -1625, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( -1625, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( -150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( 150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( -150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( 150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			}
+		);
+	};
+	
+	"himsn_interstellar_outpost" = 
+	{
+		like_ship = "himsn_headquarters";
+		beacon_label = "Imperial Navy Outpost";
+		name = "Imperial Navy Outpost";
+		roles = "himsn_interstellar_outpost himsn_station station";
+		subentities = (
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 1, 0, 0, 0);	
+			position = ( 0, 0, 650 );
+			is_dock = true;
+			},
+			{
+			subentity_key = "himsn_kiotaDock";
+			orientation = ( 0, 0, 1, 0);	
+			position = ( 0, 0, -650 );
+			is_dock = true;
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, 375, 0 );
+			},
+			{
+			subentity_key = "himsn_kiotaDisc";
+			type = "standard";
+			position = ( 0, 1625, 0 );
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 375, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( 1625, 0, 0 );
+			orientation = ( 0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( 0, -375, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},
+			{
+			subentity_key = "himsn_kiotaDisc";
+			type = "standard";
+			position = ( 0, -1625, 0 );
+			orientation = ( 0, 0, 0, 1 );
+			},			
+			{
+			subentity_key = "himsn_kiotaStrut";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaLift";
+			type = "standard";
+			position = ( -375, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaComms";
+			type = "standard";
+			position = ( -1625, 0, 0 );
+			orientation = ( -0.7071, 0, 0, 0.7071 );
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( -150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 1.0, 0.0, 0.0, 0.0);
+			position = ( 150.67, 0.0, 715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( -150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			},
+			{
+			subentity_key = "himsn_kiotaTurret";
+			type = "ball_turret";
+			orientation = ( 0.0, 0.0, 1.0, 0.0);
+			position = ( 150.67, 0.0, -715.91 );
+			weapon_range = 7500;
+			weapon_energy = 100;
+			}
+		);
+	};
+	
+	"himsn_defender" = 
+	{
+		"accuracy" = "8";
+		"ai_type" = "himsn_station_defender_ai.js";
+		"escorts" = "2";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_asp";
+		"roles" = "himsn_defender";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_light_patrol_leader" = 
+	{
+		"accuracy" = "8";
+		"ai_type" = "himsn_patrol_leader_ai.js";
+		"escorts" = "4";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_asp";
+		"roles" = "himsn_light_patrol_leader";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_adv_patrol_asp" = 
+	{
+		"accuracy" = "8";
+		"ai_type" = "himsn_adv_patrol_ai.js";
+		"escorts" = "4";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_asp";
+		"roles" = "himsn_adv_patrol";
+		"script" = "himsn_adv_patrol.js";
+	};
+	
+	"himsn_adv_patrol_boa_mk2" = 
+	{
+		"accuracy" = "7";
+		"ai_type" = "himsn_adv_patrol_ai.js";
+		"escorts" = "6";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_boa_mk2";
+		"roles" = "himsn_adv_patrol";
+		"script" = "himsn_adv_patrol.js";
+	};
+	
+	"himsn_adv_patrol_constrictor" = 
+	{
+		"accuracy" = "9";
+		"ai_type" = "himsn_adv_patrol_ai.js";
+		"condition_script" = "himsn_constrictor_conditions.js";
+		"escorts" = "4";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_constrictor";
+		"roles" = "himsn_adv_patrol";
+		"script" = "himsn_adv_patrol.js";
+	};
+	
+	"himsn_escort" = 
+	{
+		"accuracy" = "5";
+		"ai_type" = "himsn_escort_ai.js";
+		"like_ship" = "himsn_sidewinder";
+		"roles" = "himsn_escort";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_escort_asp" = 
+	{
+		"accuracy" = "8";
+		"ai_type" = "himsn_escort_ai.js";
+		"escorts" = "0";
+		"like_ship" = "himsn_asp";
+		"roles" = "himsn_escort_asp";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_escort_anaconda" = 
+	{
+		"accuracy" = "6";
+		"ai_type" = "himsn_escort_ai.js";
+		"escorts" = "0";
+		"like_ship" = "himsn_anaconda";
+		"roles" = "himsn_escort_anaconda";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_heavy_patrol_leader" = 
+	{
+		"accuracy" = "9";
+		"ai_type" = "himsn_patrol_leader_ai.js";
+		"condition_script" = "himsn_constrictor_conditions.js";
+		"escorts" = "4";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_constrictor";
+		"roles" = "himsn_heavy_patrol_leader";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_logistics_transport" = 
+	{
+		"accuracy" = "6";
+		"ai_type" = "himsn_patrol_leader_ai.js";
+		"escorts" = "4";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_anaconda";
+		"roles" = "himsn_logistics_transport";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_missile_corvette" =
+	{
+		"accuracy" = "7";
+		"ai_type" = "himsn_patrol_leader_ai.js";
+		"escorts" = "6";
+		"escort_role" = "himsn_escort";
+		"escort-ship" = "himsn_escort";
+		"like_ship" = "himsn_boa_mk2";
+		"roles" = "himsn_missile_corvette";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_specops_recon" = 
+	{
+		"accuracy" = "10";
+		"ai_type" = "himsn_patrol_leader_ai.js";
+		"condition_script" = "himsn_constrictor_conditions.js";
+		"cloak_automatic" = "yes";
+		"cloak_passive" = "yes";
+		"has_cloaking_device" = "yes";
+		"has_military_jammer" = "yes";
+		"has_military_scanner_filter" = "yes";
+		"like_ship" = "himsn_constrictor";
+		"name" = "Navy Intelligence Constrictor";
+		"roles" = "himsn_specops_recon";
+		"script" = "himsn_ship.js";
+	};
+	
+	"himsn_specops_asp" = 
+	{
+		"accuracy" = "9";
+		"ai_type" = "himsn_specops_asp_ai.js";
+		"cloak_automatic" = "yes";
+		"cloak_passive" = "yes";
+		"has_cloaking_device" = "yes";
+		"has_military_jammer" = "yes";
+		"has_military_scanner_filter" = "yes";
+		"like_ship" = "himsn_asp";
+		"name" = "Navy Special Ops Asp Mark II";
+		"roles" = "himsn_specops_asp";
+		"script" = "himsn_ship.js";
+	};
+}

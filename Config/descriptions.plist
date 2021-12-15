@@ -1,0 +1,53 @@
+{
+	"himsn_station_launchDefenseShips" = "[oolite_entityName], you have been identifed as an enemy of Her Imperial Majesty and will be destroyed!";
+	"himsn_station_alertFriendlyIntruder" = "[oolite_entityName], you are entering a HIMSN restricted zone. If you have official business with the Navy please proceed. If not, turn away immediately.";
+	"himsn_station_warnFriendlyIntruder" = "[oolite_entityName], you are entering a HIMSN restricted zone. You have 15 seconds to leave the area or you wil be destroyed.";
+	
+	"himsn_fighter_attackLowEnergy" = "I'm going down...";
+	"himsn_fighter_beginningAttack" = "For Her Imperial Majesty!";
+	"himsn_fighter_beginningAttackThargoid" = "We'll drive you Thargies out of this galaxy, once and for all!";
+	"himsn_fighter_continuingAttack" = "You cannot defeat the Navy!";
+	"himsn_fighter_continuingAttackThargoid" = "Take that Thargies!";
+	"himsn_fighter_eject" = "Abort! ABORT!";
+	"himsn_fighter_firedMissile" = "Missile away!";
+	"himsn_fighter_friendlyFire" = "Watch it, [oolite_entityName]!";
+	"himsn_fighter_hitTarget" = "Target hit!";
+	"himsn_fighter_incomingMissile" = "We've got incoming... Pull up!";
+	"himsn_fighter_killedTarget" = "Bogey down!";
+	"himsn_fighter_quiriumCascade" = "Fire in the hole! MOVE!";
+	"himsn_fighter_thanksForHelp" = "Her Imperial Majesty thanks you!";
+	"himsn_fighter_thargoidAttack" = "It's the Thargoids! Engage and destroy!";
+	
+	"himsn_carrier_attackLowEnergy" = "We're not going to last much longer...";
+	"himsn_carrier_beginningAttack" = "All attack ships, destroy the hostile [oolite_entityName]!";
+	"himsn_carrier_beginningAttackThargoid" = "All attack ships, engage and destroy all Thargoid ships!";
+	"himsn_carrier_continuingAttack" = "You cannot defeat the Navy!";
+	"himsn_carrier_continuingAttackThargoid" = "Continue firing on all Thargoid vessels!";
+	"himsn_carrier_firedMissile" = "Launching missiles...";
+	"himsn_carrier_friendlyFire" = "You are targeting friendly forces, [oolite_entityName]!";
+	"himsn_carrier_hitTarget" = "Target has taken damage!";
+	"himsn_carrier_incomingMissile" = "Missile inbound! Hard to port!";
+	"himsn_carrier_killedTarget" = "Target eliminated!";
+	"himsn_carrier_quiriumCascade" = "Fire in the hole! MOVE!";
+	"himsn_carrier_thanksForHelp" = "Her Imperial Majesty thanks you!";
+	"himsn_carrier_thargoidAttack" = "Engaging Thargoid forces!";
+	"himsn_carrier_alertFriendlyIntruder" = "[oolite_entityName], this is HIMSS [mission_himsn_carrier_name]. You are entering our safety zone, please turn away immediately.";
+	"himsn_carrier_warnFriendlyIntruder" = "[oolite_entityName] - You have ignored our warning. If you do not leave the area within the next 15 seconds, your ship will be destroyed.";
+
+	"himsn_carrier_names" = 
+	(
+		"Ark Royal",
+		"Audacity",
+		"Avenger",
+		"Biter",
+		"Courageous",
+		"Dasher",
+		"Eagle",
+		"Glorious",
+		"Hercules",
+		"Hermes",
+		"Majestic",
+		"Venerable",
+		"Vengeance"
+	);
+}

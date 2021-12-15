@@ -1,0 +1,28 @@
+const vec3            tangent = vec3(1.0, 0.0, 0.0);
+
+varying vec2         vTexCoord;
+varying vec3         vEyeVector;   // These are all in tangent space
+varying vec3         vLight0Vector;
+varying vec3         vLight1Vector;
+
+void main()
+{
+   // Build tangent basis
+   vec3 n = normalize(gl_NormalMatrix * gl_Normal);
+   vec3 t = normalize(gl_NormalMatrix *tangent);
+   vec3 b = cross(n, t);
+   mat3 TBN = mat3(t, b, n);
+   
+   vec3 eyeVector = -vec3(gl_ModelViewMatrix * gl_Vertex);
+   vEyeVector = eyeVector * TBN;
+   
+#ifdef OO_LIGHT_0_FIX
+   vec3 light0Vector = gl_LightSource[0].position.xyz + eyeVector;
+   vLight0Vector = light0Vector * TBN;
+#endif
+   vec3 light1Vector = gl_LightSource[1].position.xyz + eyeVector;
+   vLight1Vector = light1Vector * TBN;
+   vTexCoord = gl_MultiTexCoord0.st;
+   
+   gl_Position = ftransform();
+}

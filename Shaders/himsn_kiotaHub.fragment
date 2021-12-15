@@ -1,0 +1,58 @@
+uniform sampler2D    uColorMap;
+uniform sampler2D    uEmissionMap;
+
+varying vec2         vTexCoord;
+varying vec3         vEyeVector;   // These are all in tangent space
+varying vec3         vLight0Vector;
+varying vec3         vLight1Vector;
+
+// Constants
+    const float KspecExponent = 1.0;
+    const float specIntensity = 1.0;
+    const vec3 normal = vec3(0.0, 0.0, 1.0); 
+
+// Uniforms from Oolite
+   uniform float  uTime;
+
+void Light(in vec3 lightVector, in vec3 normal, in vec3 lightColor, in vec3 eyeVector, 
+           in float KspecExponent, inout vec3 totalDiffuse, inout vec3 totalSpecular)
+{
+   lightVector = normalize(lightVector);
+   vec3 reflection = normalize(-reflect(lightVector, normal));
+   
+   totalDiffuse += gl_FrontMaterial.diffuse.rgb * lightColor * max(dot(normal, lightVector), 0.0);
+   totalSpecular += lightColor * pow(max(dot(reflection, eyeVector), 0.0), KspecExponent);
+}
+
+#define LIGHT(idx, vector) Light(vector, normal, gl_LightSource[idx].diffuse.rgb, eyeVector, KspecExponent, diffuse, specular)
+
+
+void main()
+{
+   vec3 eyeVector = normalize(vEyeVector);
+   vec3 colorMap = texture2D(uColorMap, vTexCoord).rgb; 
+   vec3 diffuse = vec3(0.0), specular = vec3(0);
+
+   
+#ifdef OO_LIGHT_0_FIX
+   LIGHT(0, normalize(vLight0Vector));
+#endif
+   LIGHT(1, normalize(vLight1Vector));
+   diffuse += gl_FrontMaterial.ambient.rgb * gl_LightModel.ambient.rgb;
+   
+   vec3 color = diffuse * colorMap;
+   color += colorMap * specular * specIntensity;
+
+// this next 'scrolling light' effect is only available in full shader mode   
+#ifndef OO_REDUCED_COMPLEXITY 
+
+// Set up a looping float to add to the texture coords
+float counting_up = mod(uTime * 0.07, 1.0);
+// set up the scrolling light map
+vec3 ScrollingIllumMap = texture2D(uEmissionMap, vec2(vTexCoord.s, vTexCoord.t - counting_up)).rgb; 
+// add it in to the texture 
+     color += ScrollingIllumMap;
+#endif   
+    
+   gl_FragColor = vec4(color.rgb, 1.0);
+}

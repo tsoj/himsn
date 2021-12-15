@@ -1,0 +1,65 @@
+{
+	"himsn_rogue_planet_1" = 
+	{
+		"percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "-144100 805400 709700";
+		"radius" = "19000";
+	};
+	
+	"himsn_rogue_planet_2" = 
+	{
+		"percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "-504680 753000 -734000";
+		"radius" = "18000";
+	};
+	
+	"himsn_rogue_planet_3" = 
+	{
+		"percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "738042 -650428 -683039";
+		"radius" = "19000";
+	};
+	
+	"himsn_rogue_planet_4" = 
+	{
+		"percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "-357087 -540180 968000";
+		"radius" = "18000";
+	};
+
+	"himsn_rogue_planet_5" = 
+	{
+		"percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "-1000000 500000 -200000";
+		"radius" = "16000";	
+	};
+	
+	"himsn_rogue_planet_6" = 
+	{
+        "percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "-178000 3261300 -293500";
+        "radius" = "11000";
+	};
+	
+	"himsn_rogue_planet_7" = 
+	{
+        "percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "100000 -4500000 1650000";
+        "radius" = "18000";
+	};
+	
+	"himsn_rogue_planet_8" = 
+	{
+        "percent_land" = "100";
+		"polar_color_factor" = "0.0";
+		"position" = "156000 3174000 -916500";
+        "radius" = "15000";
+	};
+}
