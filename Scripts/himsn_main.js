@@ -3,7 +3,7 @@ this.author         = "Pleb";
 this.copyright      = "(C) 2014 Pleb.";
 this.licence        = "CC-NC-by-SA 4.0";
 this.description    = "This is the main worldscript for the HIMSN OXZ.";
-this.version        = "0.701";
+this.version        = "0.8";
 
 "use strict";
 
@@ -23,6 +23,7 @@ this._addAdvPatrolShips = function(pos)
 	}
 }
 
+//TODO why is this never used?
 this._addAdvEscort = function()
 {
 	var pos = system.locationFromCode("WITCHPOINT");
@@ -51,6 +52,7 @@ this._launchAdvPatrol = function()
 	}
 }
 
+//TODO why is this never used?
 this._addNavyBattleFleet = function(pos)
 {
 	// Add Navy Carrier and defending fleet:
@@ -186,12 +188,14 @@ this._addNavyPatrol = function (pos)
 	system.addGroup(patrol, 1, pos, 0);
 }
 
+//TODO why is this never used?
 this._addNavyLogisticsTransport = function (pos)
 {
 	// Add a Navy Logistics Transport:
 	system.addGroup("himsn_logistics_transport", 1, pos, 0);
 }
 
+//TODO why is this never used?
 this._addNavyMissileCorvette = function (pos)
 {
 	// Add a Navy Missile Corvette:
@@ -409,16 +413,14 @@ this.shipWillExitWitchspace = function ()
 		System.infoForSystem(galaxyNumber,player.ship.targetSystem).name = "Intergalactic space";
 		// Adjust player's position to new area of interstellar space:
 		player.ship.position = [0,0,1E6];
-		// Set spawn chance variable:
-		var interchance = Math.random();
 		// 80% chance of 2x light patrols vs 4-6 thargoids:
-		if (interchance < 0.8)
+		if (Math.random() < 0.8)
 		{
 			system.addShips("himsn_light_patrol_leader",2,[0,0,1E6],5000);
 			system.addShips("thargoid",4+Math.floor(Math.random() * (2 - 0 + 1) + 10),[0,0,1E6],5000);
 		}
-		// 70% chance of 2x heavy patrols vs 6-8 thargoids:
-		else if (interchance < 0.7)
+		// Else 70% chance of 2x heavy patrols vs 6-8 thargoids:
+		else if (Math.random() < 0.7)
 		{
 			if (missionVariables.conhunt == "MISSION_COMPLETE" && missionVariables.thargplans == "MISSION_COMPLETE")
 			{
@@ -556,9 +558,8 @@ this.interstellarSpaceWillPopulate = function ()
 	// If in interstellar space with no outpost:
 	else 
 	{
-		var interchance = Math.random();
 		// 2x heavy patrols vs 6x thargoids:
-		if(interchance < heavypatrolchance)
+		if(Math.random() < heavypatrolchance)
 		{
 			var heavy_patrol;
 			if (Math.random() < 0.5)
@@ -596,7 +597,7 @@ this.interstellarSpaceWillPopulate = function ()
 			});
 		}
 		// 2x light patrols vs 4x thargoids:
-		else if(interchance < lightpatrolchance)
+		else if(Math.random() < lightpatrolchance)
 		{
 			system.setPopulator("himsn-interstellar-light-escort",
 			{

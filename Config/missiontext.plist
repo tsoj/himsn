@@ -1,0 +1,21 @@
+{
+  "HIMSN_welcome_message" = "Do not disembark. This is a naval base. While we may be interested in purchasing Thargoid technology, we do not otherwise buy goods or offer them for sale. If you have nothing of interest for us, please leave immediately.";
+  "HIMSN_market_message" = "For security reasons we only deal with approved contractors.\nHowever, in case you are in possession of alien items, we are willing to offer a premium price for them.\n\nYou have currently [num_alien_items] alien items in your cargo hold.";
+  "HIMSN_sold_alien_items_message" = "You sold us [sold_alien_items] alien items, of which we found [num_sold_special_items] interesting enough to give you a bonus.\nEarned credits: [earned_credits] cr";
+  "HIMSN_shipyard_restricted_message" = "Our shipyards are off-limits to civilians.";
+  "HIMSN_interfaces_restricted_message" = "For security reasons, ship-station communications have been blocked.";
+  "HIMSN_warning_message" = "Leave immediately or you will face consequences soon.";
+  "HIMSN_forced_launch_message" = "You have illegally prolonged your stay despite warnings. You have been adjudged as an offender. You will be evicted NOW.";
+
+  "HIMSN_stay_or_leave" = {
+    "HIMSN_stay" = "Stay";
+    "HIMSN_leave" = "Leave";
+  };
+
+  "HIMSN_forced_launch_title" = "HIMSN Station";
+  "HIMSN_warning_title" = "HIMSN Station";
+  "HIMSN_market_title" = "HIMSN Market";
+  "HIMSN_shipyard_title" = "HIMSN Shipyard";
+  "HIMSN_interfaces_title" = "HIMSN System Interfaces";
+  "HIMSN_welcome_title" = "HIMSN Station";
+}

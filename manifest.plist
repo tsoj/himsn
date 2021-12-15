@@ -1,12 +1,12 @@
 {
-	identifier = "himsn_alpha_test";
-	version = "0.701";
-	title = "Her Imperial Majesty's Space Navy (Beta Test)";
+	identifier = "himsn_beta";
+	version = "0.8";
+	title = "Her Imperial Majesty's Space Navy (Beta)";
 	required_oolite_version = "1.79";
-	description = "Alpha Test for Her Imperial Majesty's Space Navy OXZ";
+	description = "Her Imperial Majesty's Space Navy OXZ (Beta)";
 	category = "Misc";
-	author = "Gimi, Pleb, Keeper, Smivs, Cody & Disembodied";
+	author = "Gimi, Pleb, Keeper, Smivs, Cody, Disembodied, Tsoj";
 	license = "GPL v2+ / CC-BY-NC-SA 4.0";
 	download_url = "http://www.pleb-industries.com/Oolite/OXZ/himsn_alpha_test.oxz";
-	file_size = 26333184;
+	file_size = 26500000;
 }
