@@ -3,7 +3,7 @@ this.author         = "Pleb";
 this.copyright      = "(C) 2014 Pleb.";
 this.licence        = "CC-NC-by-SA 4.0";
 this.description    = "This is the main worldscript for the HIMSN OXZ.";
-this.version        = "0.8";
+this.version        = "0.8-alpha";
 
 "use strict";
 

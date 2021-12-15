@@ -4,7 +4,7 @@ this.name 			= "himsn_station_defender_ai";
 this.author         = "Pleb";
 this.copyright      = "(C) 2014 Pleb.";
 this.licence        = "CC-NC-by-SA 4.0";
-this.version 		= "0.8";
+this.version 		= "0.8-alpha";
 
 this.aiStarted = function() 
 {

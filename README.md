@@ -1,6 +1,6 @@
 # Her Imperial Majesty's Space Navy
 
-An expansion pack for [Oolite](http://www.oolite.org/).
+## An expansion pack for [Oolite](http://www.oolite.org/).
 
 "A more 'believable' Navy presence that sits more comfortably in the Ooniverse as many of us see it. The problem with GN is that it's too big. Based on canon and lore, the war against the Thargoids is played out mostly in InterGalactic space, and therefore you wouldn't expect to find a big naval presence in 'normal' space. There would not be navy ships all over the place (clogging up the spacelanes!) and the idea of numerous naval bases (SecComs) in each Galaxy also seems a bit silly. These stations also skew the game quite badly due to their market economics. Also, GN often focuses on pirates, and there is no justification for this within the game - that's what the GalCop Police are for.
 
@@ -24,4 +24,22 @@ Cody
 Disembodied  
 Cholmondely  
 Tsoj*
+
+## Development plan
+
+**Alpha Version - Eye Candy only:**
+- [x] Navy units from the core ship-set.
+- [ ] Navy stations. (HQ and Outpost) (need textures)
+- [x] Basic scripting and and AI behaviour.
+
+**Beta Version - Thargoid Interaction:**
+- [ ] War zones with the Thargoids
+- [x] Capital ships
+- [ ] Yearly Parade
+- [ ] Additional stations (Navy Shipyard and maybe some mission related type of station)
+- [ ] Intelligence/Special Operations type ships (e.g. production model of the Constrictor)
+    - [ ] AI behaviour
+
+**Gamma Version - Missions:**
+- [ ] Player Missions
   

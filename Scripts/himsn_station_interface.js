@@ -5,7 +5,7 @@ this.author         = "Tsoj";
 this.copyright      = "(C) 2021 Tsoj.";
 this.licence        = "CC-NC-by-SA 4.0";
 this.description    = "This is the script for station interfaces for the HIMSN OXZ.";
-this.version        = "0.8";
+this.version        = "0.8-alpha";
 
 const timeToFirstWarning = 120; // seconds
 const timeToForcedLaunch = 180; // seconds
