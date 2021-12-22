@@ -396,10 +396,8 @@
 		allows_auto_docking = "no";
 		allows_fast_docking = "no";
 		"auto_ai" = "no";
-		"beacon" = "N";
-		"beacon_label" = "Imperial Navy Headquarters";
 		cargo_type = "CARGO_NOT_CARGO";
- 		defense_ship_role = "himsn_escort";
+		defense_ship_role = "himsn_escort";
 		energy_recharge_rate = 100;
 		"equipment_price_factor" = "2.5";
 		"equivalent_tech_level" = "13";
@@ -449,7 +447,12 @@
 		rotating = yes;
 		scan_class = "CLASS_STATION";
 		script = "himsn_station.js";
-		script_info = {"stationOrientation" = "planet"; };
+		script_info = {
+			"stationOrientation" = "planet";
+		};
+		script_info = {
+			telescope = 0;
+		};
 		shaders = { 
 			"himsn_kiotaHubInner.png" = { 
 				textures = 
@@ -787,7 +790,6 @@
 	"himsn_system_base" = 
 	{
 		like_ship = "himsn_headquarters";
-		beacon_label = "Imperial Navy Base";
 		name = "Imperial Navy Base";
 		roles = "himsn_system_base himsn_station station";
 		subentities = (
@@ -910,7 +912,6 @@
 	"himsn_interstellar_outpost" = 
 	{
 		like_ship = "himsn_headquarters";
-		beacon_label = "Imperial Navy Outpost";
 		name = "Imperial Navy Outpost";
 		roles = "himsn_interstellar_outpost himsn_station station";
 		subentities = (
