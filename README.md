@@ -27,12 +27,12 @@ Tsoj*
 
 ## Development plan
 
-**Alpha Version - Eye Candy only:**
+**Stage 1 - Eye Candy only:**
 - [x] Navy units from the core ship-set.
 - [ ] Navy stations. (HQ and Outpost) (need textures)
 - [x] Basic scripting and and AI behaviour.
 
-**Beta Version - Thargoid Interaction:**
+**Stage 2 - Thargoid Interaction:**
 - [ ] War zones with the Thargoids
 - [x] Capital ships
 - [ ] Yearly Parade
@@ -40,6 +40,6 @@ Tsoj*
 - [ ] Intelligence/Special Operations type ships (e.g. production model of the Constrictor)
     - [ ] AI behaviour
 
-**Gamma Version - Missions:**
+**Stage 3 - Missions:**
 - [ ] Player Missions
   
