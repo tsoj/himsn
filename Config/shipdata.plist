@@ -16,8 +16,6 @@
 		allows_auto_docking = "no";
 		allows_fast_docking = "no";
 		"auto_ai" = "no";
-		"beacon" = "N";
-		"beacon_label" = "Imperial Navy Carrier";
 		cargo_type = "CARGO_NOT_CARGO";
 		"defense_ship_role" = "himsn_escort";
 		energy_recharge_rate = 50.0;
@@ -396,10 +394,8 @@
 		allows_auto_docking = "no";
 		allows_fast_docking = "no";
 		"auto_ai" = "no";
-		"beacon" = "N";
-		"beacon_label" = "Imperial Navy Headquarters";
 		cargo_type = "CARGO_NOT_CARGO";
- 		defense_ship_role = "himsn_escort";
+		defense_ship_role = "himsn_escort";
 		energy_recharge_rate = 100;
 		"equipment_price_factor" = "2.5";
 		"equivalent_tech_level" = "13";
@@ -449,190 +445,191 @@
 		rotating = yes;
 		scan_class = "CLASS_STATION";
 		script = "himsn_station.js";
-		script_info = {"stationOrientation" = "planet"; };
+		script_info = {
+			"stationOrientation" = "planet";
+			telescope = 0;
+		};
 		shaders = { 
 			"himsn_kiotaHubInner.png" = { 
-				textures = 
-					(
+				textures = (
 					"himsn_kiotaHubInner.png", 
 					{ name = "himsn_kiotaHubGlow.png"; repeat_t = "yes"; }
-					);
+				);
 				vertex_shader = "himsn_kiotaHub.vertex"; 
 				fragment_shader = "himsn_kiotaHub.fragment"; 
-				uniforms =
-						{
-						uColorMap = { type = texture; value = 0; };
-						uEmissionMap = { type = texture; value = 1; };
-						uTime = "timeElapsedSinceSpawn";
-						};
-			shininess = 5;
+				uniforms = {
+					uColorMap = { type = texture; value = 0; };
+					uEmissionMap = { type = texture; value = 1; };
+					uTime = "timeElapsedSinceSpawn";
+				};
+				shininess = 5;
 			};
 		};	
 		smooth = yes;
 		subentities = (
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 1, 0, 0, 0);	
-			position = ( 0, 0, 650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 1, 0, 0, 0);	
+				position = ( 0, 0, 650 );
+				is_dock = true;
 			},
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 0, 0, 1, 0);	
-			position = ( 0, 0, -650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 0, 0, 1, 0);	
+				position = ( 0, 0, -650 );
+				is_dock = true;
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, 2125, 0 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, 2125, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, 2125, 0 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, 2125, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 2125, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 2125, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 2125, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 2125, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, -2125, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, -2125, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, -2125, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, -2125, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( -2125, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( -2125, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( -2125, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( -2125, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaSRing";
-			type = "standard";
-			position = ( 0, 0, 0 );
+				subentity_key = "himsn_kiotaSRing";
+				type = "standard";
+				position = ( 0, 0, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( 0, 3375, 0 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( 0, 3375, 0 );
 			},	
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( 3375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( 3375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( 0, -3375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( 0, -3375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},	
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( -3375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( -3375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( -150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( -150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( 150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( 150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( -150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( -150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( 150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( 150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			}
 		);
 		station_roll = -0.06;
@@ -645,14 +642,13 @@
 		ai_type = "nullAI.plist";
 		model = "himsn_kiotaStrut.dat";
 		"materials" = {
-			"himsn_kiotaStrut.png" =
-				{
+			"himsn_kiotaStrut.png" = {
 				diffuse_map = "himsn_kiotaStrut.png";
 				normal_map = "himsn_kiotaStrutnormal.png";
 				specular_map = { name = "himsn_kiotaStrut.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;					
-				};
+			};
 		};
 		name = "Kiota Strut";
 		roles = "himsn_kiotaStrut";
@@ -665,8 +661,8 @@
 			"himsn_kiotaLift.png" = { 
 				diffuse_map = "himsn_kiotaLift.png"; 
 				emission_map = "himsn_kiotaLiftGlow.png"; 
-				}; 
 			}; 
+		}; 
 		model = "himsn_kiotaLift.dat";
 		name = "Kiota Lift";
 		roles = "himsn_kiotaLift";
@@ -677,14 +673,13 @@
 		ai_type = "nullAI.plist";
 		model = "himsn_kiotaSRing.dat";
 		"materials" = {
-			"himsn_kiotaSRing.png" =
-				{
+			"himsn_kiotaSRing.png" = {
 				diffuse_map = "himsn_kiotaSRing.png";
 				normal_map = "himsn_kiotaSRingnormal.png";
 				specular_map = { name = "himsn_kiotaSRing.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;					
-				};
+			};
 		};
 		name = "Kiota Small Ring";
 		roles = "himsn_kiotaSRing";
@@ -695,8 +690,7 @@
 		ai_type = "nullAI.plist";
 		model = "himsn_kiotaSpur.dat";
 		"materials" = {
-			"himsn_kiotaSpur.png" =
-				{
+			"himsn_kiotaSpur.png" = {
 				diffuse_map = "himsn_kiotaSpur.png";
 				normal_map = "himsn_kiotaSpurnormal.png";
 				specular_map = { name = "himsn_kiotaSpur.png"; extract_channel = "a"; };
@@ -704,7 +698,7 @@
 				emission_modulate_color = ( 0.40, 0.60, 0.80 );
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;					
-				};
+			};
 		};
 		name = "Kiota Spur";
 		roles = "himsn_kiotaSpur";
@@ -721,8 +715,8 @@
 				specular_map = { name = "himsn_kiotaDisc.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;
-				}; 
-			};
+			}; 
+		};
 		model = "himsn_kiotaDisc.dat";
 		name = "Kiota Disc";
 		roles = "himsn_kiotaDisc";
@@ -733,14 +727,13 @@
 		ai_type = "nullAI.plist";
 		model = "himsn_kiotaComms.dat";
 		"materials" = {
-			"himsn_kiotaComms.png" =
-				{
+			"himsn_kiotaComms.png" = {
 				diffuse_map = "himsn_kiotaComms.png";
 				normal_map = "himsn_kiotaCommsnormal.png";
 				specular_map = { name = "himsn_kiotaComms.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;					
-				};
+			};
 		};
 		name = "Kiota Comms Array";
 		roles = "himsn_kiotaComms";
@@ -759,18 +752,16 @@
 		max_flight_roll = 1;
 		max_energy = 2000;
 		shaders = { 
-            "himsn_kiotaTurret.png" = 
-				{ 
+            "himsn_kiotaTurret.png" =  { 
                 vertex_shader = "himsn_kiotaTurret.vertex"; 
                 fragment_shader = "himsn_kiotaTurret.fragment"; 
                 textures = ( "himsn_kiotaTurret.png" );
-				uniforms =
-						{
-						uColorMap = { type = texture; value = 0; };
-						hull_heat_level = "hullHeatLevel";
-						}; 	
-				}; 
-			};	
+				uniforms = {
+					uColorMap = { type = texture; value = 0; };
+					hull_heat_level = "hullHeatLevel";
+				}; 	
+			}; 
+		};	
 		thrust = 1;
 		energy_recharge_rate = 5;
 	};
@@ -787,122 +778,121 @@
 	"himsn_system_base" = 
 	{
 		like_ship = "himsn_headquarters";
-		beacon_label = "Imperial Navy Base";
 		name = "Imperial Navy Base";
 		roles = "himsn_system_base himsn_station station";
 		subentities = (
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 1, 0, 0, 0);	
-			position = ( 0, 0, 650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 1, 0, 0, 0);	
+				position = ( 0, 0, 650 );
+				is_dock = true;
 			},
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 0, 0, 1, 0);	
-			position = ( 0, 0, -650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 0, 0, 1, 0);	
+				position = ( 0, 0, -650 );
+				is_dock = true;
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaSpur";
-			type = "standard";
-			position = ( 0, 1625, 0 );
+				subentity_key = "himsn_kiotaSpur";
+				type = "standard";
+				position = ( 0, 1625, 0 );
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( 1625, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( 1625, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaSpur";
-			type = "standard";
-			position = ( 0, -1625, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaSpur";
+				type = "standard";
+				position = ( 0, -1625, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( -1625, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( -1625, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( -150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( -150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( 150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( 150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( -150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( -150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( 150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( 150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			}
 		);
 	};
@@ -910,122 +900,121 @@
 	"himsn_interstellar_outpost" = 
 	{
 		like_ship = "himsn_headquarters";
-		beacon_label = "Imperial Navy Outpost";
 		name = "Imperial Navy Outpost";
 		roles = "himsn_interstellar_outpost himsn_station station";
 		subentities = (
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 1, 0, 0, 0);	
-			position = ( 0, 0, 650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 1, 0, 0, 0);	
+				position = ( 0, 0, 650 );
+				is_dock = true;
 			},
 			{
-			subentity_key = "himsn_kiotaDock";
-			orientation = ( 0, 0, 1, 0);	
-			position = ( 0, 0, -650 );
-			is_dock = true;
+				subentity_key = "himsn_kiotaDock";
+				orientation = ( 0, 0, 1, 0);	
+				position = ( 0, 0, -650 );
+				is_dock = true;
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, 375, 0 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, 375, 0 );
 			},
 			{
-			subentity_key = "himsn_kiotaDisc";
-			type = "standard";
-			position = ( 0, 1625, 0 );
+				subentity_key = "himsn_kiotaDisc";
+				type = "standard";
+				position = ( 0, 1625, 0 );
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 375, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 375, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( 1625, 0, 0 );
-			orientation = ( 0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( 1625, 0, 0 );
+				orientation = ( 0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( 0, -375, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( 0, -375, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},
 			{
-			subentity_key = "himsn_kiotaDisc";
-			type = "standard";
-			position = ( 0, -1625, 0 );
-			orientation = ( 0, 0, 0, 1 );
+				subentity_key = "himsn_kiotaDisc";
+				type = "standard";
+				position = ( 0, -1625, 0 );
+				orientation = ( 0, 0, 0, 1 );
 			},			
 			{
-			subentity_key = "himsn_kiotaStrut";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaStrut";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaLift";
-			type = "standard";
-			position = ( -375, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaLift";
+				type = "standard";
+				position = ( -375, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaComms";
-			type = "standard";
-			position = ( -1625, 0, 0 );
-			orientation = ( -0.7071, 0, 0, 0.7071 );
+				subentity_key = "himsn_kiotaComms";
+				type = "standard";
+				position = ( -1625, 0, 0 );
+				orientation = ( -0.7071, 0, 0, 0.7071 );
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( -150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( -150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 1.0, 0.0, 0.0, 0.0);
-			position = ( 150.67, 0.0, 715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 1.0, 0.0, 0.0, 0.0);
+				position = ( 150.67, 0.0, 715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( -150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( -150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			},
 			{
-			subentity_key = "himsn_kiotaTurret";
-			type = "ball_turret";
-			orientation = ( 0.0, 0.0, 1.0, 0.0);
-			position = ( 150.67, 0.0, -715.91 );
-			weapon_range = 7500;
-			weapon_energy = 100;
+				subentity_key = "himsn_kiotaTurret";
+				type = "ball_turret";
+				orientation = ( 0.0, 0.0, 1.0, 0.0);
+				position = ( 150.67, 0.0, -715.91 );
+				weapon_range = 7200;
+				weapon_energy = 100;
 			}
 		);
 	};

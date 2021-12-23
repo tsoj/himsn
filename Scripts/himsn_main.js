@@ -7,6 +7,8 @@ this.version        = "0.8-alpha";
 
 "use strict";
 
+// TODO add logging
+
 /**** Functions ****/
 
 this._addAdvPatrol = function()
