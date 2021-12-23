@@ -16,8 +16,6 @@
 		allows_auto_docking = "no";
 		allows_fast_docking = "no";
 		"auto_ai" = "no";
-		"beacon" = "N";
-		"beacon_label" = "Imperial Navy Carrier";
 		cargo_type = "CARGO_NOT_CARGO";
 		"defense_ship_role" = "himsn_escort";
 		energy_recharge_rate = 50.0;
