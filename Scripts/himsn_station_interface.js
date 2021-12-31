@@ -29,7 +29,7 @@ this._startLeaveTimer = function(f, t){
 	this._leaveTimer = new Timer(this, f, t);
 }
 
-function isAtHIMSNStation(){
+function _isAtHIMSNStation(){
     return player.ship.docked && (
         player.ship.dockedStation.hasRole("himsn_komodo_carrier") ||
         player.ship.dockedStation.hasRole("himsn_station")
@@ -148,7 +148,7 @@ this._runSystemScreen = function(){
 }
 
 this.guiScreenChanged = function () {
-    if(isAtHIMSNStation()) {
+    if(_isAtHIMSNStation()) {
         if (guiScreen === "GUI_SCREEN_MARKET" || guiScreen == "GUI_SCREEN_MARKETINFO")
             this._runMarketScreen();
         if (guiScreen === "GUI_SCREEN_SHIPYARD" || guiScreen === "GUI_SCREEN_EQUIP_SHIP")
@@ -159,13 +159,13 @@ this.guiScreenChanged = function () {
 }
 
 this.shipWillLaunchFromStation = function() {
-    if(isAtHIMSNStation()) {
+    if(_isAtHIMSNStation()) {
         this._startLeaveTimer();
     }
 }
 
 this.shipDockedWithStation = function () {
-    if(isAtHIMSNStation()) {
+    if(_isAtHIMSNStation()) {
         mission.runScreen({
             titleKey: "HIMSN_welcome_title",
             messageKey: "HIMSN_welcome_message",
@@ -182,7 +182,7 @@ this.shipDockedWithStation = function () {
 }
 
 this.startUpComplete = function() {
-    if(isAtHIMSNStation()) {
+    if(_isAtHIMSNStation()) {
 	    this._startLeaveTimer(this._warningLeaveStation.bind(this), timeToFirstWarning);
     }
 }

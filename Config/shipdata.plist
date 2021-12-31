@@ -42,18 +42,10 @@
 			{
 				"emission_map" = "komodo_em-map.png";
 				"normal_map" = "komodo_normal.png";
-				"specular_map" = 
-				{
-					name = "komodo_texture.png"; extract_channel = "a";
-				};
-				shininess = 25;
-				"specular_color" = 
-				(
-					"0.3",
-					"0.3",
-					"0.6",
-					"0.5"
-				);
+				"specular_map" = "cbr_universal_sg.png";
+	
+				gloss = 0.5;
+
 			};
 		};
 		max_cargo = 0;
@@ -184,13 +176,13 @@
 				};
 				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
 				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
-				"shininess" = "5";      
+				"gloss" = "0.5";
 			};
 			"Gun" = 
 			{ 
 				"diffuse_map" = "oolite_asp_subents.png"; 
 				"specular_color" = ( 0.2, 0.2, 0.2 ); 
-				"shininess" = "5"; 
+				"gloss" = "0.5"; 
 			};   
 		};
 		"missiles" = "4";
@@ -236,7 +228,7 @@
 				};
 				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
 				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
-				"shininess" = "5";      
+				"gloss" = "0.5";      
 			};
 		};
 		"missiles" = "2";
@@ -282,13 +274,13 @@
 				};
 				"emission_modulate_color" = ( 0.98, 0.92, 0.72 );
 				"specular_color" = ( 0.3, 0.3, 0.3, 1.0 );
-				"shininess" = "5";      
+				"gloss" = "0.5";      
 			};
 			"Engine" = 
 			{ 
 				"diffuse_map" = "oolite_anaconda_subents.png"; 
 				"specular_color" = ( 0.2, 0.2, 0.2 ); 
-				"shininess" = "5"; 
+				"gloss" = "0.5"; 
 				"emission_map" = 
 				{
 					"name" = "oolite_anaconda_subents.png"; 
@@ -300,7 +292,7 @@
 			{ 
 				"diffuse_map" = "oolite_anaconda_subents.png"; 
 				"specular_color" = ( 0.2, 0.2, 0.2 ); 
-				"shininess" = "5"; 
+				"gloss" = "0.5"; 
 			};      
 		};
 		"missiles" = "8";
@@ -338,13 +330,13 @@
 				emission_map = { name = "himsn_boa2_normal.png"; extract_channel = "a"; };
 				emission_modulate_color = ( 0.98, 0.92, 0.72 );
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;      
+				gloss = 0.5;
 			};
 			"Engine" = 
 			{ 
 				diffuse_map = "oolite_boa-mk2_subents.png"; 
 				specular_color = ( 0.2, 0.2, 0.2 );
-				shininess = 5;
+				gloss = 0.5;
 				emission_map = 
 				{
 					name = "oolite_boa-mk2_subents.png"; extract_channel = "a";
@@ -413,15 +405,18 @@
 		materials = { 
 			"himsn_kiotaHubInner.png" = { 
 				diffuse_map = "himsn_kiotaHubInner.png"; 
-				emission_map = "himsn_kiotaHubGlow.png"; 
-				shininess = 5;
+				emission_map = "himsn_universal_donor_e.png"; 
+				specular_map = { name = "himsn_kiotaHubOuter.png"; extract_channel = "a"; };
+				specular_color = (0.3, 0.3, 0.3, 1.0);
+				gloss = 0.5;	
 				}; 
 			"himsn_kiotaHubOuter.png" = {
 				diffuse_map = "himsn_kiotaHubOuter.png";
 				normal_map = "himsn_kiotaHubOuternormal.png";
+				emission_map = "himsn_universal_donor_e.png"; 
 				specular_map = { name = "himsn_kiotaHubOuter.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;					
+				gloss = 0.5;					
 				};
 		};
 		"market" = "none";
@@ -449,22 +444,6 @@
 			"stationOrientation" = "planet";
 			telescope = 0;
 		};
-		shaders = { 
-			"himsn_kiotaHubInner.png" = { 
-				textures = (
-					"himsn_kiotaHubInner.png", 
-					{ name = "himsn_kiotaHubGlow.png"; repeat_t = "yes"; }
-				);
-				vertex_shader = "himsn_kiotaHub.vertex"; 
-				fragment_shader = "himsn_kiotaHub.fragment"; 
-				uniforms = {
-					uColorMap = { type = texture; value = 0; };
-					uEmissionMap = { type = texture; value = 1; };
-					uTime = "timeElapsedSinceSpawn";
-				};
-				shininess = 5;
-			};
-		};	
 		smooth = yes;
 		subentities = (
 			{
@@ -645,9 +624,10 @@
 			"himsn_kiotaStrut.png" = {
 				diffuse_map = "himsn_kiotaStrut.png";
 				normal_map = "himsn_kiotaStrutnormal.png";
+				emission_map = "himsn_universal_donor_e.png"; 
 				specular_map = { name = "himsn_kiotaStrut.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;					
+				gloss = 0.5;					
 			};
 		};
 		name = "Kiota Strut";
@@ -676,9 +656,10 @@
 			"himsn_kiotaSRing.png" = {
 				diffuse_map = "himsn_kiotaSRing.png";
 				normal_map = "himsn_kiotaSRingnormal.png";
+				emission_map = "himsn_universal_donor_e.png"; 
 				specular_map = { name = "himsn_kiotaSRing.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;					
+				gloss = 0.5;					
 			};
 		};
 		name = "Kiota Small Ring";
@@ -697,7 +678,8 @@
 				emission_map = { name = "himsn_kiotaSpurnormal.png"; extract_channel = "a"; };
 				emission_modulate_color = ( 0.40, 0.60, 0.80 );
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;					
+				shininess = 5;	
+				gloss = 0.5;				
 			};
 		};
 		name = "Kiota Spur";
@@ -715,6 +697,7 @@
 				specular_map = { name = "himsn_kiotaDisc.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
 				shininess = 5;
+				gloss = 0.5;
 			}; 
 		};
 		model = "himsn_kiotaDisc.dat";
@@ -730,9 +713,11 @@
 			"himsn_kiotaComms.png" = {
 				diffuse_map = "himsn_kiotaComms.png";
 				normal_map = "himsn_kiotaCommsnormal.png";
+				emission_map = "himsn_universal_donor_e.png"; 
 				specular_map = { name = "himsn_kiotaComms.png"; extract_channel = "a"; };
 				specular_color = (0.3, 0.3, 0.3, 1.0);
-				shininess = 5;					
+				shininess = 5;
+				gloss = 0.5;					
 			};
 		};
 		name = "Kiota Comms Array";
