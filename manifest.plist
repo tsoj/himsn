@@ -1,11 +1,11 @@
 {
 	identifier = "himsn_alpha";
-	version = "0.8-alpha";
+	version = "0.9-alpha";
 	title = "Her Imperial Majesty's Space Navy (Alpha)";
 	required_oolite_version = "1.79";
 	description = "Her Imperial Majesty's Space Navy OXZ (Alpha)";
 	category = "Misc";
-	author = "Gimi, Pleb, Keeper, Smivs, Cody, Disembodied, Tsoj";
+	author = "Gimi, Pleb, Keeper, Smivs, Cody, Disembodied, Cholmondely, Tsoj";
 	license = "GPL v2+ / CC-BY-NC-SA 4.0";
 	download_url = "http://www.pleb-industries.com/Oolite/OXZ/himsn_alpha_test.oxz";
 	file_size = 26500000;
