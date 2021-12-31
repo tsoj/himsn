@@ -1,3 +1,5 @@
+"use strict";
+
 this.name           = "himsn_constrictor_conditions";
 this.author         = "Pleb";
 this.copyright      = "(C) 2014 Pleb.";
