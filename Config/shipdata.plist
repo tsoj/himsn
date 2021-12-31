@@ -419,7 +419,7 @@
 				gloss = 0.5;					
 				};
 		};
-		"market" = "none";
+		"market_capacity" = 0;
 		"max_defense_ships" = "10";
 		"max_police " = "0";
 		"max_scavengers" = "0";
