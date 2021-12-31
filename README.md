@@ -23,13 +23,14 @@ Smivs
 Cody  
 Disembodied  
 Cholmondely  
-Tsoj*
+Tsoj  
+cbr*
 
 ## Development plan
 
 **Stage 1 - Eye Candy only:**
 - [x] Navy units from the core ship-set.
-- [ ] Navy stations. (HQ and Outpost) (need textures)
+- [x] Navy stations. (HQ and Outpost)
 - [x] Basic scripting and and AI behaviour.
 
 **Stage 2 - Thargoid Interaction:**
