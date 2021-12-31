@@ -7,12 +7,12 @@ this.licence        = "CC-NC-by-SA 4.0";
 this.description    = "This is the script for station interfaces for the HIMSN OXZ.";
 this.version        = "0.8-alpha";
 
-const timeToFirstWarning = 120; // seconds
-const timeToForcedLaunch = 180; // seconds
+this._timeToFirstWarning = 120; // seconds
+this._timeToForcedLaunch = 180; // seconds
 
 this._leaveTimer = null;
 
-function _assert(condition, message) {
+this._assert = function(condition, message) {
 	if(!condition)
     	log("HIMSN", "ERROR, condition failed: " + message);
 }
@@ -29,14 +29,14 @@ this._startLeaveTimer = function(f, t){
 	this._leaveTimer = new Timer(this, f, t);
 }
 
-function _isAtHIMSNStation(){
+this._isAtHIMSNStation = function(){
     return player.ship.docked && (
         player.ship.dockedStation.hasRole("himsn_komodo_carrier") ||
         player.ship.dockedStation.hasRole("himsn_station")
     );
 }
 
-function _forcedStationLaunch() {
+this._forcedStationLaunch = function() {
 	player.bounty += 40;
 	mission.runScreen({
 		titleKey: "HIMSN_forced_launch_title",
@@ -53,7 +53,7 @@ this._warningLeaveStation = function(){
 		choicesKey: "HIMSN_stay_or_leave"
 	}, function (choice){
 		if(choice === "HIMSN_stay"){
-			this._startLeaveTimer(_forcedStationLaunch, timeToForcedLaunch);
+			this._startLeaveTimer(this._forcedStationLaunch.bind(this), this._timeToForcedLaunch);
 		}
 		if(choice === "HIMSN_leave"){
 			player.ship.launch();
@@ -61,7 +61,7 @@ this._warningLeaveStation = function(){
 	});
 }
 
-function _generateAlienItemPrice() {
+this._generateAlienItemPrice = function() {
 	let result = {
 		price: 100.0,
 		isSpecial: false
@@ -94,25 +94,25 @@ this._runMarketScreen = function() {
 		choices: options,
 		allowInterrupt: true
 	}, function (text){
-		_assert(text.indexOf(optionPrefix) !== -1, "Options keys all should begin with the option prefix.")
+		this._assert(text.indexOf(optionPrefix) !== -1, "Options keys all should begin with the option prefix.")
 		let x = text.replace(optionPrefix, "");
 		
-		_assert(!isNaN(x), "Should be a number: " + x);
-		_assert(x > 0, "Should be only possible to sell positive amounts of alien items.");
+		this._assert(!isNaN(x), "Should be a number: " + x);
+		this._assert(x > 0, "Should be only possible to sell positive amounts of alien items.");
 
-		this._startLeaveTimer(this._warningLeaveStation.bind(this), timeToFirstWarning);
+		this._startLeaveTimer(this._warningLeaveStation.bind(this), this._timeToFirstWarning);
 
 		const soldAlienItems = Math.min(Math.floor(x), numAlienItems);
 
 		let earnedCredits = 0;
 		let numSoldSpecialItems = 0;
 		for(let i = 0; i<soldAlienItems; i++){
-			const p = _generateAlienItemPrice();
+			const p = this._generateAlienItemPrice();
 			earnedCredits += p.price;
 			if(p.isSpecial)
 				numSoldSpecialItems += 1;
 		}
-		_assert(earnedCredits >= 0, "Player shouldn't lose credits by selling alien items.");
+		this._assert(earnedCredits >= 0, "Player shouldn't lose credits by selling alien items.");
 
 		player.ship.manifest.alien_items -= soldAlienItems;
 		player.credits += earnedCredits;
@@ -148,7 +148,7 @@ this._runSystemScreen = function(){
 }
 
 this.guiScreenChanged = function () {
-    if(_isAtHIMSNStation()) {
+    if(this._isAtHIMSNStation()) {
         if (guiScreen === "GUI_SCREEN_MARKET" || guiScreen == "GUI_SCREEN_MARKETINFO")
             this._runMarketScreen();
         if (guiScreen === "GUI_SCREEN_SHIPYARD" || guiScreen === "GUI_SCREEN_EQUIP_SHIP")
@@ -159,20 +159,20 @@ this.guiScreenChanged = function () {
 }
 
 this.shipWillLaunchFromStation = function() {
-    if(_isAtHIMSNStation()) {
+    if(this._isAtHIMSNStation()) {
         this._startLeaveTimer();
     }
 }
 
 this.shipDockedWithStation = function () {
-    if(_isAtHIMSNStation()) {
+    if(this._isAtHIMSNStation()) {
         mission.runScreen({
             titleKey: "HIMSN_welcome_title",
             messageKey: "HIMSN_welcome_message",
             choicesKey: "HIMSN_stay_or_leave",
         }, function (choice){
             if(choice === "HIMSN_stay"){
-                this._startLeaveTimer(this._warningLeaveStation.bind(this), timeToFirstWarning);
+                this._startLeaveTimer(this._warningLeaveStation.bind(this), this._timeToFirstWarning);
             }
             if(choice === "HIMSN_leave"){
                 player.ship.launch();
@@ -182,7 +182,7 @@ this.shipDockedWithStation = function () {
 }
 
 this.startUpComplete = function() {
-    if(_isAtHIMSNStation()) {
-	    this._startLeaveTimer(this._warningLeaveStation.bind(this), timeToFirstWarning);
+    if(this._isAtHIMSNStation()) {
+	    this._startLeaveTimer(this._warningLeaveStation.bind(this), this._timeToFirstWarning);
     }
 }
